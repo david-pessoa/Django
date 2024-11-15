@@ -1,0 +1,13 @@
+Comandos:
+criar pasta env localmente
+% virtualenv -p python3 env
+cd env
+source bin/activate
+pip install Django
+pip freeze > requirements.txt
+django-admin startproject projeto_django .
+django-admin startapp core
+python manage.py runserver
+
+asset_mobility % python manage.py makemigrations asset_mobi
+asset_mobility % python manage.py migrate

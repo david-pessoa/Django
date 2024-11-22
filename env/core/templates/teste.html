@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+</head>
+<body>
+    <h1>Tabela de produtos cadastrados</h1>
+    <table border="1">
+        <thead>
+            <th>Nome do produto</th>
+            <th>Preço</th>
+            <th>Cor</th>
+            <th>Categoria</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+        </thead>
+
+        <tbody>
+        {% for produto in produtos %}
+            <tr>
+                <td> <a href="{% url 'produto' produto.pk %}">{{ produto.nome }}</a> </td>
+                <td> {{ produto.preco }} </td>
+                {% for cor in produto.cor_id.all %}
+                    <td> {{ cor.nome }} </td>
+                {% endfor %}
+                <td> {{ produto.categoria }} </td>
+                <td> {{ produto.descricao }} </td>
+                <td> {{ produto.quantidade }} </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

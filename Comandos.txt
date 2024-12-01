@@ -27,5 +27,12 @@ python manage.py shell
 #### Criar novo administrador ####
 env % python manage.py createsuperuser 
 
+### Copiar arquivos de static (Desenvolvimento) para statifiles (Produção) ###
+python manage.py collectstatic
+
+### Testar Localmente em modo produção ###
+python manage.py runserver --insecure
+
+
 User: david
 senha: 123
